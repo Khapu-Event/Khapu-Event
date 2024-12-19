@@ -57,6 +57,7 @@ window.onload = function () {
 };
 
 setInterval(changeBackgroundColor, 60000);  // Cập nhật mỗi phút
+etInterval(updateCountdown, 1000); 
 
 
 function createSnowflakes() {
