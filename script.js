@@ -10,15 +10,24 @@ function changeBackgroundColor() {
 	const currentTime = getCurrentTime();
 	const hours = currentTime.getHours();
 
-	if (hours >= 5 && hours < 18) {  // Từ 6h sáng đến 5h chiều
+	const tree = document.getElementById("treeContainer")
+	const snowman = document.getElementById("snowman")
+
+	if (hours >= 5 && hours < 16) {  // Từ 6h sáng đến 5h chiều
+		tree.style.display = "none"
+		snowman.style.display = "flex"
 		container.style.backgroundColor = "#0093d8";  // Màu nền ban ngày
 		container.style.background = "-moz-linear-gradient(top, #0093d8, #fff)";  // Gradient cho Firefox
 		container.style.background = "-webkit-gradient(linear, left bottom, left top, color-stop(0, #fff), color-stop(1, #0093d8))";  // Gradient cho Webkit
 	} else if (hours >= 16 && hours < 18) {  // Từ 4h chiều đến 18h tối
+		tree.style.display = "flex"
+		snowman.style.display = "none"
 		container.style.backgroundColor = "rgb(255, 140, 0)";  // Màu hoàng hôn
 		container.style.background = "-moz-linear-gradient(top, rgb(255, 140, 0), #fff)";  // Gradient cho Firefox
 		container.style.background = "-webkit-gradient(linear, left bottom, left top, color-stop(0, #fff), color-stop(1, rgb(255, 140, 0)))";  // Gradient cho Webkit
 	} else {  // Từ 18h tối đến 5h sáng
+		tree.style.display = "none"
+		snowman.style.display = "none"
 		container.style.backgroundColor = "rgb(26, 13, 171)";  // Màu ban đêm
 		container.style.background = "-moz-linear-gradient(top, rgb(26, 13, 171), #fff)";  // Gradient cho Firefox
 		container.style.background = "-webkit-gradient(linear, left bottom, left top, color-stop(0, #fff), color-stop(1, rgb(26, 13, 171)))";  // Gradient cho Webkit
